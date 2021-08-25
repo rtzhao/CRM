@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>crm</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+
+  <filter>
+  <filter-name>EncodingFilter</filter-name>
+  <filter-class>fun.rtzhao.crm.web.filter.EncodingFilter</filter-class>
+</filter>
+  <filter-mapping>
+    <filter-name>EncodingFilter</filter-name>
+    <url-pattern>*.do</url-pattern>
+  </filter-mapping>
+
+  <filter>
+    <filter-name>LoginFilter</filter-name>
+    <filter-class>fun.rtzhao.crm.web.filter.LoginFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>LoginFilter</filter-name>
+    <url-pattern>*.do</url-pattern>
+    <url-pattern>*.jsp</url-pattern>
+  </filter-mapping>
+
+  <listener>
+    <listener-class>fun.rtzhao.crm.web.listener.SysInitListener</listener-class>
+  </listener>
+
+  <servlet>
+    <servlet-name>UserController</servlet-name>
+    <servlet-class>fun.rtzhao.crm.settings.web.controller.UserController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserController</servlet-name>
+    <url-pattern>/settings/user/login.do</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>ActivityController</servlet-name>
+    <servlet-class>fun.rtzhao.crm.workbench.web.controller.ActivityController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ActivityController</servlet-name>
+    <url-pattern>/workbench/activity/getUserList.do</url-pattern>
+    <url-pattern>/workbench/activity/save.do</url-pattern>
+    <url-pattern>/workbench/activity/pageList.do</url-pattern>
+    <url-pattern>/workbench/activity/delete.do</url-pattern>
+    <url-pattern>/workbench/activity/getUserListAndActivity.do</url-pattern>
+    <url-pattern>/workbench/activity/update.do</url-pattern>
+    <url-pattern>/workbench/activity/detail.do</url-pattern>
+    <url-pattern>/workbench/activity/getRemarkListByAid.do</url-pattern>
+    <url-pattern>/workbench/activity/deleteRemark.do</url-pattern>
+    <url-pattern>/workbench/activity/saveRemark.do</url-pattern>
+    <url-pattern>/workbench/activity/updateRemark.do</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>ClueController</servlet-name>
+    <servlet-class>fun.rtzhao.crm.workbench.web.controller.ClueController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ClueController</servlet-name>
+    <url-pattern>/workbench/clue/getUserList.do</url-pattern>
+    <url-pattern>/workbench/clue/save.do</url-pattern>
+    <url-pattern>/workbench/clue/detail.do</url-pattern>
+    <url-pattern>/workbench/clue/getActivityListByClueId.do</url-pattern>
+    <url-pattern>/workbench/clue/unbund.do</url-pattern>
+    <url-pattern>/workbench/clue/getActivityListByNameAndNotByClueId.do</url-pattern>
+    <url-pattern>/workbench/clue/bund.do</url-pattern>
+    <url-pattern>/workbench/clue/getActivityListByName.do</url-pattern>
+    <url-pattern>/workbench/clue/convert.do</url-pattern>
+
+  </servlet-mapping>
+
+
+  <servlet>
+    <servlet-name>TranController</servlet-name>
+    <servlet-class>fun.rtzhao.crm.workbench.web.controller.TranController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TranController</servlet-name>
+    <url-pattern>/workbench/transaction/add.do</url-pattern>
+    <url-pattern>/workbench/transaction/getCustomerName.do</url-pattern>
+    <url-pattern>/workbench/transaction/save.do</url-pattern>
+    <url-pattern>/workbench/transaction/detail.do</url-pattern>
+    <url-pattern>/workbench/transaction/getHistoryListByTranId.do</url-pattern>
+    <url-pattern>/workbench/transaction/changeStage.do</url-pattern>
+    <url-pattern>/workbench/transaction/getCharts.do</url-pattern>
+
+
+  </servlet-mapping>
+
+</web-app>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
